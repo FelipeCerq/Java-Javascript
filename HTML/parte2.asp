@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>Cadastro</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        function validarCampos(button) {
+            with (CamposCadastro) {
+                if (Nomeid.value == "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Nome não colocado!'
+                    })
+                    Nomeid.focus();
+                    return false;
+                }
+                if (Email.value == "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Email não prenchido!'
+                    })
+                    Email.focus();
+                    return false;
+                }
+                if (Senha.value == "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Senha não prenchida!'
+                    })
+                    Senha.focus();
+                    return false;
+                }
+                button.disabled = "disabled";
+                action = "google.com";
+                submit();
+            }
+        }
+        function mOver(obj) {
+            obj.style.backgroundColor = "RGB(58,138,215)";
+        }
+        function mOut(obj) {
+            obj.style.backgroundColor = "RGB(24,105,183)";
+        }
+    </script>
+    <style type="text/css">
+        html {
+            background-image: url("C:/Users/Desenvolvedor07/Desktop/testes/HTML/1083290.png");
+            background-position: 30% 45%;
+            background-size: cover;
+        }
+
+        body {
+            overflow: hidden;
+            border-style: groove;
+            border-radius: 6px;
+            border-width: thin;
+            margin: 120px 450px 400px;
+            display: block;
+            background-color: white;
+            padding: 15px 50px;
+        }
+
+        h3 {
+            font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+            line-height: 2.75rem;
+            font-size: 2.25rem;
+            letter-spacing: 0;
+            font-weight: 400;
+            margin: 29px 0 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .bord {
+            height: 30px;
+            padding-right: max(16px,var(--mdc-shape-small,4px));
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 3px;
+            text-align-last: start;
+        }
+
+        td {
+            text-align-last: center;
+        }
+
+        .ah {
+            color: var(--gm-colortextbutton-ink-color,#1a73e8);
+            text-decoration: none;
+            font-family: "Google Sans",Roboto,Arial,sans-serif;
+            font-size: .875rem;
+            letter-spacing: .0107142857em;
+            font-weight: 500;
+            text-transform: none;
+            cursor: pointer;
+        }
+
+        .sb {
+            margin: 25px;
+        }
+    </style>
+</head>
+<body style="overflow: hidden;">
+    <form name="CamposCadastro" action="#" method="post" onsubmit="return validarCampos();">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <h3>Criar sua conta</h3>
+                    <div class="float-label">
+                        <section>
+                            <input type="text" class="bord" id="Nomeid" name="Nomeid" size="25" placeholder="Nome">
+                        </section>
+                        <br />
+                        <section>
+                            <input type="text" class="bord" id="Email" name="Email" size="25" placeholder="Endereço de e-mail atual">
+                        </section>
+                        <br />
+                        <section>
+                            <input type="password" class="bord" id="Senha" name="Senha" size="25" placeholder="Senha">
+                        </section>
+                        <br />
+                        <a href="parte1.asp" class="ah">Faça Login</a>
+                        <input type="button" onmouseover="mOver(this);" onmouseout="mOut(this);" class="sb" id="inputid" onclick="validarCampos(this)" value="Increver-se" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
