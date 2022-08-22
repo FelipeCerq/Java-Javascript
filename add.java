@@ -63,10 +63,7 @@ public static void main(String [] args)    {
        System.out.println("\nAluno Reprovado.\n");
     } else {
        System.err.println("\n ERROR \n");
-    }
-    
-    
-    
+    }  
     } else {
        System.err.println("Nome invalido, nao prenchido ou Nome incorreto!");
     }
